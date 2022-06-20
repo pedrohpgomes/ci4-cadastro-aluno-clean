@@ -83,3 +83,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 # Telas do sistema
 
 ![tela-01](./public/assets/img/tela01.jpg "tela 01")
+<br />
+![tela-02](./public/assets/img/tela02.jpg "tela 02")
+<br />
+![tela-03](./public/assets/img/tela03.jpg "tela 03")
