@@ -28,7 +28,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  - "php spark migrate -g default" (sem aspas), para criar a tabela alunos;
  - "php spark db:seed AlunosSeeder -g default" (sem aspas), para popular a tabela alunos.
  
- Agora, basta o projeto com o servidor local embutido no CI4, o spark:
+ Agora, basta rodar o projeto com o servidor local embutido no CI4, o spark:
  - "php spark serve --port 8050" (atenção para a porta utilizada. Deve ser a mesma que foi colocada no app.baseURL, caso tenha colocado).
  
 ===========================================================
