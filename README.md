@@ -1,4 +1,4 @@
-#Cadastro de alunos com o CodeIgniter 4
+# Cadastro de alunos com o CodeIgniter 4
 
 ## Requerimentos (retirado da documentação do CodeIgniter 4 (CI4))
 
