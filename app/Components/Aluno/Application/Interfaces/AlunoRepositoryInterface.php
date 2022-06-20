@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Components\Aluno\Application\Interfaces;
 
+use App\Components\Aluno\Application\Dto\AlunoEditaDTO;
 use App\Components\Aluno\Domain\Entity\AlunoEntity;
 
 interface AlunoRepositoryInterface
@@ -32,12 +33,12 @@ interface AlunoRepositoryInterface
     public function excluiAluno($id): bool;
 
     /**
-     * Atualiza o aluno pelo id ($alunoAtualizado->getId()). Caso não seja possível, lança uma ReflectionException.
+     * Atualiza o aluno pelo id. Caso não seja possível, lança uma ReflectionException.
      *
      * @param AlunoEntity $alunoAtualizado
      * @return boolean
      */
-    public function editaAluno(AlunoEntity $alunoAtualizado): bool;
+    public function editaAluno(AlunoEditaDTO $alunoEditaDTO, int $alunoId): bool;
 
     /**
      * Busca um aluno pelo id informado. Retorna um objeto do tipo AlunoEntity ou null, caso não encontre.

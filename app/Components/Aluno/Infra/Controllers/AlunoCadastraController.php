@@ -84,8 +84,10 @@ final class AlunoCadastraController extends BaseController
         $alunoNome = $this->request->getPost('nome');
         $alunoEndereco = $this->request->getPost('endereco');
         $foto = $this->request->getFile('foto');
-        $alunoFoto = $foto->getRandomName();
-        //dd($alunoFoto);
+        $alunoFoto = '';
+        if (!empty($foto->getName())) {
+            $alunoFoto = $foto->getRandomName();
+        }
         $alunoNovo = new AlunoEntity();
         $alunoNovo->setNome($alunoNome)
             ->setEndereco($alunoEndereco)

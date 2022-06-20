@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Components\Aluno\Application\Services;
 
+use App\Components\Aluno\Application\Dto\AlunoEditaDTO;
 use App\Components\Aluno\Application\Interfaces\AlunoRepositoryInterface;
 use App\Components\Aluno\Application\Exceptions\ApplicationException;
 use App\Components\Aluno\Domain\Entity\AlunoEntity;
@@ -25,10 +26,10 @@ final class AlunoEditaService
      * @param AlunoEntity $alunoAtualizado
      * @return boolean
      */
-    public function editaAluno(AlunoEntity $alunoAtualizado): bool
+    public function editaAluno(AlunoEditaDTO $alunoEditaDTO, int $alunoId): bool
     {
         try {
-            return $this->alunoRepository->editaAluno($alunoAtualizado);
+            return $this->alunoRepository->editaAluno($alunoEditaDTO, $alunoId);
         } catch (ReflectionException $e) {
             throw new ApplicationException('Erro ao atualizar aluno');
         }

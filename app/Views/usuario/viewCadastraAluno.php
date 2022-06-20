@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="form-group col-10 col-md-8 col-xl-6">
                         <label for="nome"><span class="text-danger">*</span> Nome</label>
-                        <input type="text" name="nome" id="nome" class="form-control" value=""  />
+                        <input type="text" name="nome" id="nome" class="form-control" value="" required />
                     </div>
                 </div>
 

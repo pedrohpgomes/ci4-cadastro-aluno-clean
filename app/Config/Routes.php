@@ -42,9 +42,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
-$routes->get('/', [UsuarioHomeController::class, 'viewHome']);
-$routes->get('/home', [UsuarioHomeController::class, 'viewHome'], ['as' => 'UsuarioHomeController.viewHome']);
-$routes->get('/aluno', [UsuarioHomeController::class, 'viewHome']);
+$routes->get('/', [AlunoListaController::class, 'viewListaAlunos']);
+$routes->get('/aluno', [AlunoListaController::class, 'viewListaAlunos']);
 $routes->get('/aluno/lista-alunos', [AlunoListaController::class, 'viewListaAlunos'], ['as' => 'AlunoListaController.viewListaAlunos']);
 $routes->get('/aluno/foto/(:num)', [AlunoListaController::class, 'getFoto/$1'], ['as' => 'AlunoListaController.getFoto']);
 $routes->get('/aluno/cadastra-aluno', [AlunoCadastraController::class, 'viewCadastraAluno'], ['as' => 'AlunoCadastraController.viewCadastraAluno']);

@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div class="">
-        <a href="<?=route_to('UsuarioHomeController.viewHome') ?>" class="brand-link" title="ir para a home">
+        <a href="<?=route_to('UsuarioListaController.viewListaAlunos') ?>" class="brand-link" title="ir para a home">
         <i class="fas fa-home fa-lg brand-image mt-1"></i> 
         <span class="brand-text">Home</span>
         </a>

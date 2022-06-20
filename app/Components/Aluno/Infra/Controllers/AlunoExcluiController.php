@@ -36,6 +36,12 @@ final class AlunoExcluiController extends BaseController
         $id = $this->request->getPost('id');
         try {
             $sucesso = $this->alunoExcluiService->excluiAluno($id);
+            $dir = WRITEPATH . "uploads\\alunos\\$id";
+            // verifica se existe um diretorio com o id associado ao aluno
+            if (is_dir($dir)) {
+                array_map('unlink', glob("$dir/*.*"));
+                rmdir($dir);
+            }
             $this->session->setFlashdata('success', "Aluno excluído com sucesso");
         } catch (ApplicationException $e) {
             $this->session->setFlashdata('danger', $e->getMessage());

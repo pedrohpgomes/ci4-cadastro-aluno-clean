@@ -8,6 +8,8 @@ class CreateAlunosTable extends Migration
 {
     public function up()
     {
+        //$this->forge->createDatabase('ci4-aluno', true);
+
         $this->forge->addField('id');
         $this->forge->addField([
             'nome'     => ['type' => 'varchar', 'constraint' => 150],

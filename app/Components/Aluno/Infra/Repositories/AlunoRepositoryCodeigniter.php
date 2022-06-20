@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Components\Aluno\Infra\Repositories;
 
+use App\Components\Aluno\Application\Dto\AlunoEditaDTO;
 use App\Components\Aluno\Application\Interfaces\AlunoRepositoryInterface;
 use App\Components\Aluno\Domain\Entity\AlunoEntity;
 use App\Models\Aluno;
@@ -56,15 +57,17 @@ final class AlunoRepositoryCodeigniter implements AlunoRepositoryInterface
     }
 
     // ==========================================
-    public function editaAluno(AlunoEntity $alunoAtualizado): bool
+    public function editaAluno(AlunoEditaDTO $alunoEditaDTO, int $alunoId): bool
     {
         $alunoModel = new Aluno();
         $aluno = [
-            'nome' => $alunoAtualizado->getNome(),
-            'endereco' => $alunoAtualizado->getEndereco(),
-            'foto' => $alunoAtualizado->getFoto()
+            'nome' => $alunoEditaDTO->nome,
+            'endereco' => $alunoEditaDTO->endereco
         ];
-        return $alunoModel->update($alunoAtualizado->getId(), $aluno);
+        if (isset($alunoEditaDTO->foto)) {
+            $aluno['foto'] = $alunoEditaDTO->foto;
+        }
+        return $alunoModel->update($alunoId, $aluno);
     }
 
     // ==========================================

@@ -1,0 +1,13 @@
+
+criar o .env e atualizar as informações
+
+criar o banco de dados especificado na configuracao do CodeIgniter4
+
+instalando as dependencias, criando e populando tabelas
+composer install
+php spark migrate -g default
+php spark db:seed AlunosSeeder -g default
+
+
+rodar o projeto
+php spark serve --port 8050

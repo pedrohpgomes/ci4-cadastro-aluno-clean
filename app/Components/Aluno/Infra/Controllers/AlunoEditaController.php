@@ -64,7 +64,6 @@ final class AlunoEditaController extends BaseController
     // ========================================
     public function formEditaAluno(): RedirectResponse | string
     {
-        dd(isset($foto2));
         if (!$this->request->getPost()) {
             return redirect()->to(route_to('AlunoListaController.viewListaAlunos'));
         }
@@ -104,30 +103,34 @@ final class AlunoEditaController extends BaseController
             $arrayErros = ['validation' => $this->validator];
             return $this->viewEditaAluno((string)$id, $arrayErros);
         }
-        $alunoDB = $this->alunoRepository->buscaAlunoById($id);
-        $alunoNome = $this->request->getPost('nome');
-        $alunoEndereco = $this->request->getPost('endereco');
         $foto = $this->request->getFile('foto');
-        $alunoFoto = $foto->getRandomName();
-        $alunoEditaDTO = new AlunoEditaDTO($alunoNome, $alunoEndereco, $alunoFoto);
-        $alunoAtualizado = new AlunoEntity();
-        $alunoAtualizado->setNome($alunoNome)
-            ->setEndereco($alunoEndereco)
-            ->setFoto($alunoFoto)
-            ->setId($id);
+        $alunoEditaDTO = new AlunoEditaDTO();
+        $alunoEditaDTO->nome = $this->request->getPost('nome');
+        $alunoEditaDTO->endereco = $this->request->getPost('endereco');
+        //Verifica se foi feito o upload
+        if (!empty($foto->getName())) {
+            $alunoEditaDTO->foto = $foto->getRandomName();
+        }
         try {
+            //Verifica se a imagem é valida
             if ($foto->isValid() && !$foto->hasMoved()) {
+                $alunoDB = $this->alunoRepository->buscaAlunoById($id);
                 $dir = WRITEPATH . "uploads\\alunos\\$id";
+                //Verifica se já existia uma foto associada e apaga no diretorio do aluno
                 $fotoAntiga = $alunoDB->getFoto();
-                if ($fotoAntiga != $alunoFoto && ($fotoAntiga != null || $fotoAntiga != '')) {
+                if ($fotoAntiga != null && $fotoAntiga != '') {
                     $dirFotoAntiga = $dir . '\\' . $fotoAntiga;
                     if (file_exists($dirFotoAntiga)) {
                         unlink($dirFotoAntiga);
                     }
                 }
-                $foto->move($dir, $alunoFoto);
+                //verifica se foi enviada uma nova foto
+                $fotoNova = $alunoEditaDTO->foto;
+                if (isset($fotoNova) && $fotoNova != '' && $fotoNova != null) {
+                    $foto->move($dir, $fotoNova);
+                }
             }
-            $this->alunoEditaService->editaAluno($alunoAtualizado);
+            $this->alunoEditaService->editaAluno($alunoEditaDTO, $id);
             $this->session->setFlashdata('success', "Aluno atualizado com sucesso");
             return redirect()->to(route_to('AlunoListaController.viewListaAlunos'));
         } catch (ApplicationException $e) {
