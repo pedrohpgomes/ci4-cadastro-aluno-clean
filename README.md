@@ -48,7 +48,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 	
 ===========================================================
 
-# Considerações
+# Minhas Considerações
 
 <p>OBS: esta parte poderá ser atualiza caso eu consiga melhorar ainda mais o código ou implementar nova funcionalidade</p>
 
@@ -57,7 +57,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 
 ## O que deu certo
 <p>Desenvolver o sistema em camadas de forma a isolar as camdas de domínio e aplicação do resto do mundo.</p>
-
+<p>Utilização do template AdminLTE 3 para o front-end.</p>
 
 ## O que pode melhorar no código
 <p>A montagem do layout do front-end. Tem como criar o layout utilizando seção (section), para que cada página de conteúdo possa extender o layout.</p>
@@ -67,6 +67,15 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 <p>Pode parecer um pouco complexo programar em camadas como sugere o "uncle Bob", autor do livro "Arquitetura limpa: O guia do artesão para estrutura e design de software" (Clean Architecture: A Craftsman's Guide to Software Structure and Design), difícil no começo, e até um pouco mais demorado por causa dos testes. No entanto possui enormes ganhos, principalmente no quesito de testabilidade e manutenibilidade.</p>
 <p>Preciso implementar a questão do teste, de preferência com algum banco de dados que rode em memória e não dependa de nenhum SGBD.</p>
 
+===========================================================
+
+## Em relação à Clean Architecture nete projeto
+
+<p>Talvez seja necessário criar uma espécie de MainController para gerenciar os outros controles, pois o ideal é que os controllers não extendam o BaseController.</p>
+<p>Preciso ver se o CI4 trabalha com algum tipo de container para inversão de dependência ou como ele lida com isso, se tem alguma forma melhor</p>
+<p>Para a arquitetura limpa, implementar os testes é fundamental, uma vez que o sistema é criado "de dentro para fora"), ou seja, da camada de Domínio, depois para a Aplicação e somente depois para a camada de Infra. Sem implementar os testes, não se consegue realizar a arquitetura limpa. Portanto, descobrir como rodar teste em um banco em memória é fundamental.</p>
+<br />
+<br />
 <p>Por enquanto é isso. Á medida em que for me aperfeiçoando, o projeto poderá ser melhorado.</p>
 
 
