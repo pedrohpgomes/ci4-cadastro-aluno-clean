@@ -12,6 +12,8 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
  - xml (habilitada por padrão - não desabilite)
 
+===========================================================
+
 ## Como rodar o projeto:
 
  Renomeie o arquivo .env.copy para .env:
@@ -27,7 +29,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  Agora, basta o projeto com o servidor local embutido no CI4, o spark:
  - "php spark serve --port 8050" (atenção para a porta utilizada. Deve ser a mesma que foi colocada no app.baseURL, caso tenha colocado).
  
-======================================================================================
+===========================================================
 
 # A ideia do projeto:
 
