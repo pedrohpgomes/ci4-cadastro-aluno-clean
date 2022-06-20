@@ -40,9 +40,9 @@ A proposta é uma tentativa inicial de aplicar o conceito de Clean Architecture 
 A estrutura básica do projeto está em App/Components/Aluno. O componente aluno contempla praticamente todo o projeto, à exceção das views, helpers, migrations e seeders que estão nos respectivos diretórios do CI4. A estrutura possui basicamente 3 camadas, que são:  
 <br />
 	<p>* Domain (Domínio) - É a camada mais interna do sistema. Nela ficam as entidades e a regra de negócios. É a razão do sistema existir, que neste caso é o aluno.</p>
-	<p>* Application (Aplicação) - É a camada que contém as regras da aplicação. Faz a orquestração das entidades e das regras de negócio.</p>
+	<p>* Application (Aplicação) - É a camada que contém as regras da aplicação. Faz a orquestração das entidades e implementa as regras da aplicação.</p>
 	OBS: as camadas de domínio e de aplicação devem estar isoladas do mundo exterior, ou seja, não devem depender do framework utilizado, ou do banco de dados, ORM, ou coisa alguma que seja externa.
-	<p>Para conseguir tal objetivo, utilizamos interfaces para se comunicar com o mundo externo e o conceito SOLID, principalmente o Liskov Substitution Principle (Princípio da Subistituicao de Liskov) e Dependency Inversion Principle (Princípio de Inversão de Dependência).</p>
+	<p>Para conseguir tal objetivo, foram utilizadas interfaces para se comunicar com o mundo externo e o conceito SOLID, principalmente o Liskov Substitution Principle (Princípio da Subistituicao de Liskov) e Dependency Inversion Principle (Princípio de Inversão de Dependência).</p>
 		<p>Assim, caso seja necessário mudar o banco de dados de MySQL para SQL Server, por exemplo, não deve ser necessário alterar nada nas camadas de domínio e de aplicação. Apenas implementar a interface AlunoRepositoryInferface e mudar o repositório chamado na hora de instanciar o serviço (service) no controller.</p>  
 	<p>* Infra (Camada de infraestrutura) - É a camada mais externa do sistema, onde ficam os controllers e o repositório que implementa a AlunoRepositoryInterface. O Controllers fazem a orquestração dos serviços (services) da camada de aplicação.</p>
 	
@@ -72,7 +72,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 ## Em relação à Clean Architecture nete projeto
 
 <p>Talvez seja necessário criar uma espécie de MainController para gerenciar os outros controles, pois o ideal é que os controllers não extendam o BaseController.</p>
-<p>Preciso ver se o CI4 trabalha com algum tipo de container para inversão de dependência ou como ele lida com isso, se tem alguma forma melhor</p>
+<p>Preciso ver se o CI4 trabalha com algum tipo de container para inversão de dependência ou como ele lida com isso, se tem alguma forma melhor.</p>
 <p>Para a arquitetura limpa, implementar os testes é fundamental, uma vez que o sistema é criado "de dentro para fora"), ou seja, da camada de Domínio, depois para a Aplicação e somente depois para a camada de Infra. Sem implementar os testes, não se consegue realizar a arquitetura limpa. Portanto, descobrir como rodar teste em um banco em memória é fundamental.</p>
 <br />
 <br />
