@@ -54,5 +54,12 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 <p>Este foi meu primeiro projeto com o CodeIgniter 4. Já havia trabalhado com o CodeIgniter 3 e com o Laravel.</p>
 
 ## O que deu certo
+<p>Desenvolver o sistema em camadas de forma a isolar as camdas de domínio e aplicação</p>
+
+
+## O que pode melhorar no código
+<p>A montagem do layout do front-end</p>
+<p>A parte de testes (tanto de unidade como de integração) com o PhpUnit. Não consegui implementar utilizando SQLite, que é um banco de dados embutido que roda diretamente na memória. Ao que parece, sem utilizar o SQLite, seria necessário criar 02 banco de dados: um para a aplicação e outro os teste. Usando interface para o repositório, na hora de chamar o repositório que utiliza a model do codeigniter, ela grava no banco de dados default. Mesmo chamando ao repositório por meio de uma classe de teste, os dados são gravados no banco default e não no de tests. Tenho que ver como solucionar isso, senão vai ser necessário duplicar o repositório e a model, tendo um para o banco de dados default e outro para o de teste</p>
+<p>A parte de validação do formulário preciso ver como separar do restante das etapas para se gravar/excluir/editar o cadastro de um aluno, para melhor organização do código.</p>
 
 
