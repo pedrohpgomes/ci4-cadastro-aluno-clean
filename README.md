@@ -48,6 +48,11 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 
 # Considerações
 
+<p>OBS: esta parte poderá ser atualiza caso eu consiga melhorar ainda mais o código ou implementar nova funcionalidade</p>
+
 ## Experiência com o CodeIgniter 4
 <p>Este foi meu primeiro projeto com o CodeIgniter 4. Já havia trabalhado com o CodeIgniter 3 e com o Laravel.</p>
+
+## O que deu certo
+
 
