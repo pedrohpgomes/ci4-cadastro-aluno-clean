@@ -63,7 +63,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 <p>A parte de validação do formulário preciso ver como separar do restante das etapas para se gravar/excluir/editar o cadastro de um aluno, para melhor organização do código.</p>
 <br />
 <p>Pode parecer um pouco complexo programar em camadas como sugere o "uncle Bob", autor do livro "Arquitetura limpa: O guia do artesão para estrutura e design de software" (Clean Architecture: A Craftsman's Guide to Software Structure and Design), difícil no começo, e até um pouco mais demorado por causa dos testes. No entanto possui enormes ganhos, principalmente no quesito de testabilidade e manutenibilidade.</p>
-<p>Preciso implementar a questão do teste, de preferência com algum banco de dados que rode em memória e não depende de nenhum SGBD.</p>
+<p>Preciso implementar a questão do teste, de preferência com algum banco de dados que rode em memória e não dependa de nenhum SGBD.</p>
 
 <p>Por enquanto é isso. Á medida em que for me aperfeiçoando, o projeto poderá ser melhorado.</p>
 
