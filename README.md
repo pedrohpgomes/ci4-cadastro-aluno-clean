@@ -36,6 +36,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
 A proposta é uma tentativa inicial de aplicar o conceito de Clean Architecture (arquitetura limpa) no CodeIgniter 4.
 
 A estrutura básica do projeto está em App/Components/Aluno. O componente aluno contempla praticamente todo o projeto, à exceção das views, helpers, migrations e seeders que estão nos respectivos diretórios do CI4. A estrutura possui basicamente 3 camadas, que são:  
+<br />
 	* Domain (Domínio) - É a camada mais interna do sistema. Nela ficam as entidades e a regra de negócios. É a razão do sistema existir, que neste caso é o aluno.  
 	* Application (Aplicação) - É a camada que contém as regras da aplicação. Faz a orquestração das entidades e das regras de negócio.  
 	OBS: as camadas de domínio e de aplicação devem estar isoladas do mundo exterior, ou seja, não devem depender do framework utilizado, ou do banco de dados, ORM, ou coisa alguma que seja externa.
