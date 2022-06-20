@@ -1,16 +1,18 @@
 # Cadastro de alunos com o CodeIgniter 4
 
-## Requerimentos (retirado da documentação do CodeIgniter 4 (CI4))
+## Requerimentos (retirado da documentação do CodeIgniter 4 - CI4)
 
 PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
- - [intl](http://php.net/manual/en/intl.requirements.php)
- - [libcurl](http://php.net/manual/en/curl.requirements.php) caso planeje usar a bibliteca HTTP\CURLRequest
+ - [intl](http://php.net/manual/en/intl.requirements.php);
+ - [libcurl](http://php.net/manual/en/curl.requirements.php) caso planeje usar a bibliteca HTTP\CURLRequest;
 
  Adicionalmente, certifique-se de que estejam habilitadas as seguintes extensões em seu PHP:
- - json (habilitada por padrão - não desabilite)
- - [mbstring](http://php.net/manual/en/mbstring.installation.php)
- - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
- - xml (habilitada por padrão - não desabilite)
+ - json (habilitada por padrão - não desabilite);
+ - [mbstring](http://php.net/manual/en/mbstring.installation.php);
+ - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php);
+ - xml (habilitada por padrão - não desabilite);
+
+É necessário o composer para rodar este projeto.
 
 ===========================================================
 
@@ -19,7 +21,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  Renomeie o arquivo .env.copy para .env:
  - configure a opção app.baseURL caso achar necessário (no arquivo está como 'http://localhost:8050')
  - configure as opções do database.default, caso achar necessário (se atentar ao driver utilizado. O driver MySQLi serve também para o PhpMyAdmin)
- - crie no seu SGBD o banco de dados igual ao colocado da opção 'database.default.database'
+ - crie no seu SGBD o banco de dados com nome igual ao colocado da opção 'database.default.database'
  
  Após configurar o .env, será necessário criar as tabelas e popular o banco de dados. Abra um terminal de comando na raiz do projeto e digite os seguintes comandos:
  - "composer install" (sem aspas), para instalar as dependências do CodeIgniter 4;
