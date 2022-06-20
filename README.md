@@ -78,4 +78,8 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 <br />
 <p>Por enquanto é isso. Á medida em que for me aperfeiçoando, o projeto poderá ser melhorado.</p>
 
+=============================================================
 
+# Telas do sistema
+
+![tela-01](./public/assets/img/tela01.jpg "tela 01")
