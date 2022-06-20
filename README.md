@@ -54,7 +54,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 <p>Este foi meu primeiro projeto com o CodeIgniter 4. Já havia trabalhado com o CodeIgniter 3 e com o Laravel.</p>
 
 ## O que deu certo
-<p>Desenvolver o sistema em camadas de forma a isolar as camdas de domínio e aplicação</p>
+<p>Desenvolver o sistema em camadas de forma a isolar as camdas de domínio e aplicação do resto do mundo.</p>
 
 
 ## O que pode melhorar no código
