@@ -64,6 +64,7 @@ final class AlunoEditaController extends BaseController
     // ========================================
     public function formEditaAluno(): RedirectResponse | string
     {
+        //verifica se o metodo que chamou eh post. Caso nao seja, redireciona.
         if (!$this->request->getPost()) {
             return redirect()->to(route_to('AlunoListaController.viewListaAlunos'));
         }
@@ -107,7 +108,7 @@ final class AlunoEditaController extends BaseController
         $alunoEditaDTO = new AlunoEditaDTO();
         $alunoEditaDTO->nome = $this->request->getPost('nome');
         $alunoEditaDTO->endereco = $this->request->getPost('endereco');
-        //Verifica se foi feito o upload
+        //Verifica se foi feito upload
         if (!empty($foto->getName())) {
             $alunoEditaDTO->foto = $foto->getRandomName();
         }
@@ -139,4 +140,4 @@ final class AlunoEditaController extends BaseController
         return redirect()->to(route_to('AlunoEditaController . viewEditaAluno'));
     }
 }
-        //class
+//class

@@ -92,6 +92,7 @@ final class AlunoListaController extends BaseController
             return 'arquivo movido ou deletado';
         }
         $imgInfo = getimagesize($filename);
+        //Aqui o header do browser é mudado para do tipo imagem para que a imagem seja exibida corretamente
         $this->response->setHeader('Content-Type', $imgInfo['mime']);
         return file_get_contents($filename);
     }

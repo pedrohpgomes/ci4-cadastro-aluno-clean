@@ -30,6 +30,7 @@ final class AlunoExcluiController extends BaseController
     // ========================================
     public function formExcluiAluno(): RedirectResponse
     {
+        //verifica se o metodo que chamou eh post. Caso nao seja, redireciona.
         if (!$this->request->getPost()) {
             return redirect()->to(route_to('AlunoListaController.viewListaAlunos'));
         }

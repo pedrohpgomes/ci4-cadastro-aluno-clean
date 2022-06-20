@@ -51,6 +51,7 @@ final class AlunoCadastraController extends BaseController
     // ========================================
     public function formCadastraAluno(): RedirectResponse | string
     {
+        //verifica se o metodo que chamou eh post. Caso nao seja, redireciona.
         if (!$this->request->getPost()) {
             return redirect()->to(route_to('AlunoListaController.viewListaAlunos'));
         }
@@ -85,6 +86,7 @@ final class AlunoCadastraController extends BaseController
         $alunoEndereco = $this->request->getPost('endereco');
         $foto = $this->request->getFile('foto');
         $alunoFoto = '';
+        //verifica se foi feito upload da foto
         if (!empty($foto->getName())) {
             $alunoFoto = $foto->getRandomName();
         }
