@@ -26,14 +26,14 @@
                 <div class="row">
                     <div class="form-group col-10 col-md-8 col-xl-6">
                         <label for="nome"><span class="text-danger">*</span> Nome</label>
-                        <input type="text" name="nome" id="nome" class="form-control" value="<?=$aluno->getNome() ?? 'indefinido' ?>" required />
+                        <input type="text" name="nome" id="nome" class="form-control" value="<?=$aluno->getNome() ?? 'indefinido' ?>" maxlength="150" required />
                     </div>
                 </div>
                 <!-- endereco -->
                 <div class="row">
                     <div class="form-group col-12 col-md-10 col-xl-8">
                         <label for="endereco"><span class="text-danger">*</span> Endereço</label>
-                        <input type="text" name="endereco" id="endereco" class="form-control" value="<?=$aluno->getEndereco() ?? 'indefinido' ?>" required />
+                        <input type="text" name="endereco" id="endereco" class="form-control" value="<?=$aluno->getEndereco() ?? 'indefinido' ?>" maxlength="250" required />
                     </div>
                 </div>
                 <!-- foto -->
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="form-group col-12 col-md-10 col-xl-8">
                         <label>Alterar foto (opcional): </label>
-                        <input type="file" name="foto" id="foto" class="" />
+                        <input type="file" name="foto" id="foto" class="" maxlength="250" />
                         <p class="text-danger">Obs: Tamanho máximo de 1MB. Extensão permitida: jpg e jpeg</p>
                     </div>
                 </div>

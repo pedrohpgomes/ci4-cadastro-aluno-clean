@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Components\Aluno\Application\Interfaces\AlunoRepositoryInterface;
+use App\Components\Aluno\Application\Services\AlunoCadastraService;
 use App\Components\Aluno\Application\Services\AlunoInsereService;
 use App\Components\Aluno\Domain\Entity\AlunoEntity;
 use App\Components\Aluno\Infra\Repositories\AlunoRepositoryCodeigniter;
@@ -18,7 +19,7 @@ final class AlunoInsereServiceTest extends CIUnitTestCase
     use DatabaseTestTrait;
 
     private AlunoRepositoryInterface $alunoRepository;
-    private $alunoInsereService;
+    private $alunoCadastraService;
 
     // ===================================
     // For Migrations
@@ -29,8 +30,8 @@ final class AlunoInsereServiceTest extends CIUnitTestCase
 
     // For Seeds
     protected $seedOnce = false;
-    protected $seed     = 'AlunosSeederTest';
-    protected $basePath = 'tests/_support/Database';
+    protected $seed     = 'AlunosSeeder';
+    protected $basePath = '';
 
     // ===================================
     protected function setUp(): void
@@ -39,7 +40,7 @@ final class AlunoInsereServiceTest extends CIUnitTestCase
         //$seeder = Database::seeder();
         //$seeder->call('Tests\Support\Database\Seeds\AlunosSeederTest');
         $this->alunoRepository = new AlunoRepositoryCodeigniter();
-        $this->alunoInsereService = new AlunoInsereService($this->alunoRepository);
+        $this->alunoCadastraService = new AlunoCadastraService($this->alunoRepository);
     }
 
     // ===================================
@@ -49,7 +50,7 @@ final class AlunoInsereServiceTest extends CIUnitTestCase
         $alunoEntity->setNome('Goku')
             ->setEndereco('Rua dos Sayajins, 333, planeta Vegeta')
             ->setFoto('');
-        //$insertedId = $this->alunoRepository->insereAluno($alunoEntity);
+        $insertedId = $this->alunoRepository->insereAluno($alunoEntity);
         $alunoModelTest = new AlunoTest();
         $insertedId = $alunoModelTest->insert($alunoEntity->toArray());
         echo $insertedId;
