@@ -36,10 +36,11 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
 A proposta é uma tentativa inicial de aplicar o conceito de Clean Architecture (arquitetura limpa) no CodeIgniter 4.
 
 A estrutura básica do projeto está em App/Components/Aluno. O componente aluno contempla praticamente todo o projeto, à exceção das views, helpers, migrations e seeders que estão nos respectivos diretórios do CI4. A estrutura possui basicamente 3 camadas, que são:
-	* Domain (Domínio) - É a camada mais interna do sistema. Nela ficam as entidades e a regra de negócios. É a razão do sistema existir, que neste caso é o aluno.
-	* Application (Aplicação) - É a camada que contém as regras da aplicação. Faz a orquestração das entidades e das regras de negócio.
+
+	* Domain (Domínio) - É a camada mais interna do sistema. Nela ficam as entidades e a regra de negócios. É a razão do sistema existir, que neste caso é o aluno.  
+	* Application (Aplicação) - É a camada que contém as regras da aplicação. Faz a orquestração das entidades e das regras de negócio.  
 	OBS: as camadas de domínio e de aplicação devem estar isoladas do mundo exterior, ou seja, não devem depender do framework utilizado, ou do banco de dados, ORM, ou coisa alguma que seja externa.
 		Para conseguir tal objetivo, utilizamos interfaces para se comunicar com o mundo externo e o conceito SOLID, principalmente o Liskov Substitution Principle (Princípio da Subistituicao de Liskov) e Dependency Inversion Principle (Princípio de Inversão de Dependência).
-		Assim, caso seja necessário mudar o banco de dados de MySQL para SQL Server, por exemplo, não deve ser necessário alterar nada nas camadas de domínio e de aplicação. Apenas implementar a interface AlunoRepositoryInferface e mudar o repositório chamado na hora de instanciar o serviço (service) no controller.
-	* Infra (Camada de infraestrutura) - É a camada mais externa do sistema, onde ficam os controllers e o repositório que implementa a AlunoRepositoryInterface. O Controllers fazem a orquestração dos serviços (services) da camada de aplicação.
+		Assim, caso seja necessário mudar o banco de dados de MySQL para SQL Server, por exemplo, não deve ser necessário alterar nada nas camadas de domínio e de aplicação. Apenas implementar a interface AlunoRepositoryInferface e mudar o repositório chamado na hora de instanciar o serviço (service) no controller.  
+	* Infra (Camada de infraestrutura) - É a camada mais externa do sistema, onde ficam os controllers e o repositório que implementa a AlunoRepositoryInterface. O Controllers fazem a orquestração dos serviços (services) da camada de aplicação.  
 
