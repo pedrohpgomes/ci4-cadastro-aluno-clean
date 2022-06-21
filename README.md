@@ -22,7 +22,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  Renomeie o arquivo .env.copy para .env:
  - configure a opção app.baseURL caso achar necessário (no arquivo está como 'http://localhost:8050')
  - configure as opções do database.default, caso achar necessário (se atentar ao driver utilizado. O driver MySQLi serve também para o PhpMyAdmin)
- - crie no seu SGBD o banco de dados com nome igual ao colocado da opção 'database.default.database' e coloque o usuário (database.default.username) e a senha (database.default.password) a serem utilizados pela aplicação para se conectar ao banco de dados.
+ - crie no seu SGBD o banco de dados com nome igual ao colocado na opção 'database.default.database' e coloque o usuário (database.default.username) e a senha (database.default.password) a serem utilizados pela aplicação para se conectar ao banco de dados.
  
  Após configurar o .env, será necessário criar as tabelas e popular o banco de dados. Abra um terminal de comando na raiz do projeto e digite os seguintes comandos:
  - "composer install" (sem aspas), para instalar as dependências do CodeIgniter 4;
