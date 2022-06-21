@@ -14,6 +14,8 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
 
 É necessário o composer para rodar este projeto.
 
+ATUALIZADO: para rodar o banco em memória SQLite3, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3)
+
 ===========================================================
 
 ## Como rodar o projeto:
