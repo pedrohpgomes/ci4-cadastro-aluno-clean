@@ -29,31 +29,39 @@ final class AlunoInsereServiceTest extends CIUnitTestCase
     protected $namespace   = 'Tests\Support';
 
     // For Seeds
-    protected $seedOnce = false;
+/*     protected $seedOnce = false;
     protected $seed     = 'AlunosSeeder';
-    protected $basePath = '';
+    protected $basePath = ''; */
 
     // ===================================
     protected function setUp(): void
     {
         parent::setUp();
-        //$seeder = Database::seeder();
-        //$seeder->call('Tests\Support\Database\Seeds\AlunosSeederTest');
+        $seeder = Database::seeder();
+        $seeder->call('Tests\Support\Database\Seeds\AlunosSeederTest');
         $this->alunoRepository = new AlunoRepositoryCodeigniter();
         $this->alunoCadastraService = new AlunoCadastraService($this->alunoRepository);
     }
 
     // ===================================
-    public function testVerificaSeAlunoEhInseridoNaTabelaAlunos()
+    public function testVerificaSeAlunoEhInseridoNaTabelaAlunos(): void
     {
+
         $alunoEntity = new AlunoEntity();
         $alunoEntity->setNome('Goku')
             ->setEndereco('Rua dos Sayajins, 333, planeta Vegeta')
             ->setFoto('');
-        $insertedId = $this->alunoRepository->insereAluno($alunoEntity);
+        //$insertedId = $this->alunoRepository->insereAluno($alunoEntity);
         $alunoModelTest = new AlunoTest();
-        $insertedId = $alunoModelTest->insert($alunoEntity->toArray());
-        echo $insertedId;
+        $arrayAluno = [
+            'nome' => 'Goku',
+            'endereco' => $alunoEntity->getEndereco(),
+            'foto' => $alunoEntity->getFoto()
+        ];
+        $insertedId = $alunoModelTest->insert($arrayAluno);
+        $insertedAluno = $alunoModelTest->find($insertedId)->id;
+        $this->assertEquals($insertedId, $insertedAluno);
+        //echo $insertedId;
     }
 }
 //class
