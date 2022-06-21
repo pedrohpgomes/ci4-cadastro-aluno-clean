@@ -62,7 +62,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 ## O que pode melhorar no código
 <p>A montagem do layout do front-end. Tem como criar o layout utilizando seção (section), para que cada página de conteúdo possa extender o layout.</p>
 <p>A parte de testes (tanto de unidade como de integração) com o PhpUnit. Não consegui implementar utilizando SQLite, que é um banco de dados embutido que roda diretamente na memória. Ao que parece, sem utilizar o SQLite, seria necessário criar 02 banco de dados: um para a aplicação e outro os teste. Usando interface para o repositório, na hora de chamar o repositório que utiliza a model do codeigniter, ela grava no banco de dados default. Mesmo chamando ao repositório por meio de uma classe de teste, os dados são gravados no banco default e não no de tests. Tenho que ver como solucionar isso, senão vai ser necessário duplicar o repositório e a model, tendo um para o banco de dados default e outro para o de teste.</p>
-<p>A parte de validação do formulário preciso ver como separar do restante das etapas para se gravar/excluir/editar o cadastro de um aluno, para melhor organização do código.</p>
+<p>A parte de validação do formulário preciso ver como separá-lo do restante das etapas para se gravar/excluir/editar o cadastro de um aluno, para melhor organização do código.</p>
 <br />
 <p>Pode parecer um pouco complexo programar em camadas como sugere o "uncle Bob", autor do livro "Arquitetura limpa: O guia do artesão para estrutura e design de software" (Clean Architecture: A Craftsman's Guide to Software Structure and Design), difícil no começo, e até um pouco mais demorado por causa dos testes. No entanto possui enormes ganhos, principalmente no quesito de testabilidade e manutenibilidade.</p>
 <p>Preciso implementar a questão do teste, de preferência com algum banco de dados que rode em memória e não dependa de nenhum SGBD.</p>
@@ -73,7 +73,7 @@ A estrutura básica do projeto está em App/Components/Aluno. O componente aluno
 
 <p>Talvez seja necessário criar uma espécie de MainController para gerenciar os outros controles, pois o ideal é que os controllers não extendam o BaseController.</p>
 <p>Preciso ver se o CI4 trabalha com algum tipo de container para inversão de dependência ou como ele lida com isso, se tem alguma forma melhor.</p>
-<p>Para a arquitetura limpa, implementar os testes é fundamental, uma vez que o sistema é criado "de dentro para fora"), ou seja, da camada de Domínio, depois para a Aplicação e somente depois para a camada de Infra. Sem implementar os testes, não se consegue realizar a arquitetura limpa. Portanto, descobrir como rodar teste em um banco em memória é fundamental.</p>
+<p>Para a arquitetura limpa, implementar os testes é fundamental, uma vez que o sistema é criado "de dentro para fora", ou seja, começa pela camada de Domínio, depois para a Aplicação e somente depois para a camada de Infra. Sem implementar os testes, não se consegue realizar a arquitetura limpa. Portanto, descobrir como rodar teste em um banco em memória com CI4 é fundamental.</p>
 <br />
 <br />
 <p>Por enquanto é isso. Á medida em que for me aperfeiçoando, o projeto poderá ser melhorado.</p>
