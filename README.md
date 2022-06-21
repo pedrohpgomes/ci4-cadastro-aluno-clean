@@ -11,17 +11,9 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  - [mbstring](http://php.net/manual/en/mbstring.installation.php);
  - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php);
  - xml (habilitada por padrão - não desabilite);
+ - sqlite3;
 
 É necessário o composer para rodar este projeto.
-
-ATUALIZADO: para rodar o banco SQLite3 em memória, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3). No arquivo .envm o database.tests deve ficar assim:
-
-database.tests.hostname =  
-database.tests.database = ':memory:'  
-database.tests.username =  
-database.tests.password =  
-database.tests.DBDriver = SQLite3  
-database.tests.DBPrefix =  
 
 ===========================================================
 
@@ -39,6 +31,15 @@ database.tests.DBPrefix =
  
  Agora, basta rodar o projeto com o servidor local embutido no CI4, o spark:
  - "php spark serve --port 8050" (atenção para a porta utilizada. Deve ser a mesma que foi colocada no app.baseURL, caso tenha colocado).
+ 
+ ATUALIZADO: para rodar o banco SQLite3 em memória, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3). No arquivo .envm o database.tests deve ficar assim:
+
+database.tests.hostname =  
+database.tests.database = ':memory:'  
+database.tests.username =  
+database.tests.password =  
+database.tests.DBDriver = SQLite3  
+database.tests.DBPrefix =  
  
 ===========================================================
 
