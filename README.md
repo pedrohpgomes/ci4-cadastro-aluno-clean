@@ -14,7 +14,14 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
 
 É necessário o composer para rodar este projeto.
 
-ATUALIZADO: para rodar o banco em memória SQLite3, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3)
+ATUALIZADO: para rodar o banco em memória SQLite3, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3). No arquivo .envm o database.tests deve ficar assim:
+
+database.tests.hostname =
+database.tests.database = ':memory:'
+database.tests.username =
+database.tests.password =
+database.tests.DBDriver = SQLite3
+database.tests.DBPrefix =
 
 ===========================================================
 
