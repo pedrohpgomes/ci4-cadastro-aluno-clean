@@ -32,7 +32,7 @@ PHP versão 7.4 or posterior, com as seguintes extensões instaladas:
  Agora, basta rodar o projeto com o servidor local embutido no CI4, o spark:
  - "php spark serve --port 8050" (atenção para a porta utilizada. Deve ser a mesma que foi colocada no app.baseURL, caso tenha colocado).
  
- ATUALIZADO: para rodar o banco SQLite3 em memória, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3). No arquivo .envm o database.tests deve ficar assim:
+ ATUALIZADO: para rodar o banco SQLite3 em memória, é necessário habilitar no php.ini a extensão sqlite3 (extension=sqlite3). No arquivo .env o database.tests deve ficar assim:
 
 database.tests.hostname =  
 database.tests.database = ':memory:'  
